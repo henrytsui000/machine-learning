@@ -54,7 +54,7 @@ plt.xlim(-5,5)
 plt.ylim(-5,5)
 plt.xlabel(r'$b$', fontsize = 16)
 plt.ylabel(r'$w$', fontsize = 16)
-# plt.show()
+plt.show()
 
 end = time.time()
 
