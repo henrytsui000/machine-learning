@@ -24,6 +24,7 @@ img = preprocess_input(img)
 feature_maps = model.predict(img)
 # plot the output from each block
 square = 8
+cnt = 1
 for fmap in feature_maps:
 	# plot all 64 maps in an 8x8 squares
 	ix = 1
@@ -36,5 +37,6 @@ for fmap in feature_maps:
 			# plot filter channel in grayscale
 			pyplot.imshow(fmap[0, :, :, ix-1], cmap='gray')
 			ix += 1
-	# show the figure
-    pyplot.savefig("bird5_filter_output.jpg")
+	# show figure
+	pyplot.savefig(f'bird5_filter_output{cnt}.jpg')
+	cnt += 1
