@@ -6,6 +6,16 @@ from keras.preprocessing.image import img_to_array
 from keras.models import Model
 from matplotlib import pyplot
 from numpy import expand_dims
+
+import tensorflow as tf
+config = tf.compat.v1.ConfigProto(gpu_options = 
+                         tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.8)
+# device_count = {'GPU': 1}
+)
+config.gpu_options.allow_growth = True
+session = tf.compat.v1.Session(config=config)
+tf.compat.v1.keras.backend.set_session(session)
+
 # load the model
 model = VGG16()
 # redefine model to output right after the first hidden layer
